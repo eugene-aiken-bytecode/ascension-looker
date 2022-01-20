@@ -87,7 +87,7 @@ view: nlp_results__entity_mentions {
         (${certainty_assessment__value} = 'LIKELY'
     AND ${subject__value} ='PATIENT'
     AND ${temporal_assessment__value} = 'CURRENT'
-    AND ${type} = 'medicine'
+    AND ${type} = 'MEDICINE'
     AND ${confidence_percent} >= 90
     )
   ;;
@@ -114,7 +114,7 @@ view: nlp_results__entity_mentions {
     AND ${subject__value} ='PATIENT'
     AND ${temporal_assessment__value} = 'CURRENT'
     AND ${confidence_percent} >= 90
-    AND ${type} = 'problem'
+    AND ${type} = 'PROBLEM'
     )
   ;;
     description: "Patient is LIKELY to have flagged clinical history."

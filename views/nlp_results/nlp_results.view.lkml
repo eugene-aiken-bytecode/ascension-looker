@@ -138,7 +138,7 @@ view: nlp_results {
     html:
           {% assign w = nlp_results__entity_mentions.text_list_problem | split: '|RECORD|' %}
           {% assign m = nlp_results__entity_mentions.text_list_medicine | split: '|RECORD|' %}
-          {% assign s = nlp_results__entity_mentions.text_list_clinical_history| split: '|RECORD|' %}
+          {% assign s = nlp_results__entity_mentions.text_list_clinical_history | split: '|RECORD|' %}
 
           {% if w[0] %} {% assign w0 = w[0] %} {% else %} {% assign w0 = 'zzzzzzz' %} {% endif %}
           {% if w[1] %} {% assign w1 = w[1] %} {% else %} {% assign w1 = 'zzzzzzz' %} {% endif %}
