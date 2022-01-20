@@ -1,7 +1,7 @@
 view: nlp_results_terms {
   label: "*Preferred Term Filter"
   derived_table: {
-    persist_for: "24 hours"
+    persist_for: "1 hour"
     sql: SELECT
           nlp_results.DiagnosticReportId  AS diagnostic_report_id,
           regexp_replace(LOWER(nlp_results__entity_mentions.text.content),"[^a-zA-Z0-9 -]",' ') AS original_term,
