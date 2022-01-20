@@ -1,7 +1,7 @@
 view: nlp_results_terms {
   label: "*Preferred Term Filter"
   derived_table: {
-    persist_for: "1 hour"
+    sql_trigger_value: select timestamp_trunc(current_timestamp(),hour) ;;
     sql: SELECT
           nlp_results.DiagnosticReportId  AS diagnostic_report_id,
           regexp_replace(LOWER(nlp_results__entity_mentions.text.content),"[^a-zA-Z0-9 -]",' ') AS original_term,
@@ -23,9 +23,10 @@ view: nlp_results_terms {
   }
 
   dimension: unique_id {
+    primary_key: yes
     hidden: yes
     type: string
-    sql:  ${diagnostic_report_id}_id} || ${text_begin_offset};;
+    sql:  ${diagnostic_report_id} || ${text_begin_offset};;
   }
 
   dimension: diagnostic_report_id {
