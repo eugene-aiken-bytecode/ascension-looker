@@ -4,6 +4,7 @@ view: nlp_results_terms {
     sql_trigger_value: select timestamp_trunc(current_timestamp(),hour) ;;
     sql: SELECT
           nlp_results.DiagnosticReportId  AS diagnostic_report_id,
+          date(nlp_results.effectiveDateTime) AS effective_date,
           regexp_replace(LOWER(nlp_results__entity_mentions.text.content),"[^a-zA-Z0-9 -]",' ') AS original_term,
           nlp_results__entity_mentions.text.beginOffset AS text_begin_offset
 
@@ -33,6 +34,12 @@ view: nlp_results_terms {
     hidden: yes
     type: number
     sql: ${TABLE}.diagnostic_report_id ;;
+  }
+
+  dimension: effective_date {
+    datatype: date
+    type: date
+    sql: ${TABLE}.effective_date ;;
   }
 
   dimension: text_begin_offset {
