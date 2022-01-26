@@ -1,9 +1,11 @@
-connection: "ehr-search-prod"
+connection: "asc-ahnat-adsi-sandbox"
 
 # include all the views
 include: "/views/**/*.view"
-include: "/explores/*.explore"
+include: "/explores/nlp_results/*.explore"
 include: "/Dashboards/nlp_dashboards_simple.dashboard.lookml"
+
+label: "FHIR Simple NLP Results"
 
 
 datagroup: fhir_simple_nlp_default_datagroup {

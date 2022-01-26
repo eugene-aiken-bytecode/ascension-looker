@@ -1,7 +1,8 @@
-include: "/views/nlp_results.view.lkml"
+include: "/views/nlp_results/*.view.lkml"
 
 explore: nlp_results {
-  hidden: yes
+
+  label: "NLP Results - Patient View"
 
   join: nlp_results__entities {
     view_label: "NLP API"
