@@ -82,6 +82,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 0
     col: 16
     width: 8
@@ -164,6 +165,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 0
     col: 0
     width: 8
@@ -246,6 +248,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 0
     col: 8
     width: 8
@@ -303,6 +306,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 6
     col: 0
     width: 12
@@ -333,6 +337,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 6
     col: 12
     width: 6
@@ -364,6 +369,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 11
     col: 12
     width: 6
@@ -394,6 +400,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 11
     col: 18
     width: 6
@@ -423,6 +430,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 6
     col: 18
     width: 6
@@ -478,6 +486,7 @@
       Certainty Assessment Value: nlp_results__entity_mentions.certainty_assessment__value
       Subject Value: nlp_results__entity_mentions.subject__value
       Temporal Assessment Value: nlp_results__entity_mentions.temporal_assessment__value
+      Effective Date: nlp_results_terms.effective_date
     row: 16
     col: 0
     width: 24
@@ -539,3 +548,17 @@
     explore: nlp_results_terms
     listens_to_filters: [Filter on Original Term]
     field: nlp_results__entity_mentions.temporal_assessment__value
+  - name: Effective Date
+    title: Effective Date
+    type: field_filter
+    default_value: 1 year ago for 1 year
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+      options: []
+    model: fhir_simple_nlp
+    explore: nlp_results_terms
+    listens_to_filters: []
+    field: nlp_results_terms.effective_date
