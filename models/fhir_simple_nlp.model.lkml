@@ -3,7 +3,7 @@ connection: "asc-ahnat-adsi-sandbox"
 # include all the views
 include: "/views/**/*.view"
 include: "/explores/nlp_results/*.explore"
-include: "/Dashboards/nlp_dashboards_simple.dashboard.lookml"
+include: "/Dashboards/*.dashboard"
 
 label: "FHIR Simple NLP Results"
 
